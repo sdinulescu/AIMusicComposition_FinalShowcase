@@ -5,7 +5,10 @@
 import processing.core.*;
 import oscP5.*;
 import netP5.*;
+
+import java.io.*; 
 import java.util.*;
+
 
 public class Main extends PApplet {
 	public static String abracadabra = "abracadabra"; //creates test string abracadabra
@@ -32,6 +35,11 @@ public class Main extends PApplet {
 
 	
 	static ArrayList<Integer> pitches = new ArrayList<Integer>();
+	
+	String filePath = "Users/stejaradinulescu/Documents/SMU/Year IV/Spring Semester/CRCP 1192/ShowcaseProject/file.txt";
+	File file;
+	BufferedReader br; 
+
 
 	
 	public static void main(String[] args) {
@@ -54,6 +62,23 @@ public class Main extends PApplet {
 		
 	}
 	public void setup() {
+		//reading in the file with the filePath application
+		String str = ""; 
+		file = new File("/Users/stejaradinulescu/Documents/SMU/Year IV/Spring Semester/CRCP 1192/ShowcaseProject/res/myFile.txt"); 
+		try {
+			br = new BufferedReader(new FileReader(file));
+			str = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println("full path: " + str);
+
+		System.out.println("Opening Max application");
+		launch(str);
+		
+
 		background(255);
 
 		f = createFont("Arial",20,true); // Arial, 16 point, anti-aliasing on

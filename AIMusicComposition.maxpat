@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 739.0, 151.0, 640.0, 480.0 ],
+		"rect" : [ 739.0, 151.0, 343.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,50 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 112.0, 102.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 106.5, 98.0, 150.0, 20.0 ],
+					"text" : "this is the pitch coming in!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 83.0, 212.0, 150.0, 20.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 72.0, 304.0, 150.0, 20.0 ],
+					"text" : "change the sound"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 434.0, 14.0, 150.0, 60.0 ],
+					"text" : "Presentation mode includes gain for volume and message containing osc pitch value"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-44",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 357.0, 263.0, 58.0, 22.0 ],
+					"patching_rect" : [ 357.0, 201.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -63,13 +101,18 @@
 			}
 , 			{
 				"box" : 				{
+					"bgcolor" : [ 0.905882352941176, 0.823529411764706, 0.898039215686275, 1.0 ],
 					"id" : "obj-41",
-					"linecount" : 3,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 35.0, 14.0, 285.0, 47.0 ],
-					"text" : "Stejara Dinulescu\nC3 Showcase Project: AI Music Composition\nReceives OSC pitches from PST training algorithm"
+					"patching_rect" : [ 35.0, 14.0, 285.0, 60.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 4,
+					"presentation_rect" : [ 39.0, 23.0, 285.0, 60.0 ],
+					"text" : "AI Music Composition\n\nStejara Dinulescu\nReceives OSC pitches from PST training algorithm",
+					"textcolor" : [ 0.337254911661148, 0.282352954149246, 0.854901969432831, 1.0 ]
 				}
 
 			}
@@ -182,6 +225,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 38.0, 248.0, 50.0, 22.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 39.0, 98.0, 50.0, 22.0 ],
 					"text" : "74"
 				}
 
@@ -204,7 +249,9 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 38.0, 583.0, 45.0, 45.0 ]
+					"patching_rect" : [ 38.0, 583.0, 45.0, 45.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 38.0, 583.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -217,7 +264,9 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 38.0, 391.0, 22.0, 140.0 ]
+					"patching_rect" : [ 38.0, 391.0, 22.0, 140.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 39.0, 184.0, 22.0, 140.0 ]
 				}
 
 			}
@@ -354,7 +403,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"order" : 1,
+					"source" : [ "obj-44", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-43", 0 ],
+					"order" : 0,
 					"source" : [ "obj-44", 0 ]
 				}
 
@@ -419,8 +477,8 @@
 , 			{
 				"name" : "newobjYellow-1",
 				"default" : 				{
-					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ],
-					"fontsize" : [ 12.059008 ]
+					"fontsize" : [ 12.059008 ],
+					"accentcolor" : [ 0.82517, 0.78181, 0.059545, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
